@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/newsFragment2">
+    <fragment
+        android:id="@+id/favoriteFragment2"
+        android:name="com.example.newsapp.ui.fragment.FavoriteFragment"
+        android:label="fragment_favorite"
+        tools:layout="@layout/fragment_favorite" >
+        <action
+            android:id="@+id/action_favoriteFragment2_to_newsFragment2"
+            app:destination="@id/newsFragment2" />
+        <action
+            android:id="@+id/action_favoriteFragment2_to_searchedNewsFragment2"
+            app:destination="@id/searchedNewsFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/newsFragment2"
+        android:name="com.example.newsapp.ui.fragment.NewsFragment"
+        android:label="fragment_news"
+        tools:layout="@layout/fragment_news" >
+        <action
+            android:id="@+id/action_newsFragment2_to_favoriteFragment2"
+            app:destination="@id/favoriteFragment2" />
+        <action
+            android:id="@+id/action_newsFragment2_to_searchedNewsFragment2"
+            app:destination="@id/searchedNewsFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchedNewsFragment2"
+        android:name="com.example.newsapp.ui.fragment.SearchedNewsFragment"
+        android:label="fragment_searched_news"
+        tools:layout="@layout/fragment_searched_news" >
+        <action
+            android:id="@+id/action_searchedNewsFragment2_to_searchFragment2"
+            app:destination="@id/searchFragment2" />
+        <action
+            android:id="@+id/action_searchedNewsFragment2_to_newsFragment2"
+            app:destination="@id/newsFragment2" />
+        <action
+            android:id="@+id/action_searchedNewsFragment2_to_favoriteFragment2"
+            app:destination="@id/favoriteFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment2"
+        android:name="com.example.newsapp.ui.fragment.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment2_to_searchedNewsFragment2"
+            app:destination="@id/searchedNewsFragment2" />
+    </fragment>
+</navigation>

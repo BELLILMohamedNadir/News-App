@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragment.SearchedNewsFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_searched_news"
+                android:background="@drawable/search_design"
+                android:layout_marginHorizontal="20dp"
+                android:text="search Here"
+                android:layout_marginTop="5dp">
+
+            </androidx.appcompat.widget.AppCompatButton>
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/btn_searched_news"
+            android:id="@+id/refresh_layout_searched_news">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="visible"
+                    android:id="@+id/searched_news_shimmer">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <include layout="@layout/facebook_shimmer"/>
+                        <include layout="@layout/facebook_shimmer"/>
+                        <include layout="@layout/facebook_shimmer"/>
+                        <include layout="@layout/facebook_shimmer"/>
+                        <include layout="@layout/facebook_shimmer"/>
+                        <include layout="@layout/facebook_shimmer"/>
+                        <include layout="@layout/facebook_shimmer"/>
+                        <include layout="@layout/facebook_shimmer"/>
+                        <include layout="@layout/facebook_shimmer"/>
+
+                    </LinearLayout>
+                </com.facebook.shimmer.ShimmerFrameLayout>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/rv_searched_news"
+                    android:layout_below="@+id/searched_news_shimmer">
+
+                </androidx.recyclerview.widget.RecyclerView>
+            </RelativeLayout>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+
+    </RelativeLayout>
+
+</FrameLayout>
